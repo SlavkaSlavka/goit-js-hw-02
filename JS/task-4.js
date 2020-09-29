@@ -1,20 +1,30 @@
-const credits = 23580;
-const pricePerDroid = 3000;
-const droids = +prompt('Какое количество Вы хотите купить');
-let order;
-let orderPrise;
+//Напиши функцию formatString(string) которая принимает строку и форматирует ее если необходимо.
 
-if (droids === null) {
-  order = 'Отменено пользователем!';
-} else {
-  order = pricePerDroid * droids;
-}
-console.log(order);
-if (order <= credits) {
-  orderPrise = `Вы купили ${droids} дроидов, на счету осталось ${
-    credits - order
-  } кредитов.`;
-} else {
-  orderPrise = 'Недостаточно средств на счету!';
-}
-console.log(orderPrise);
+//Если длина строки не превышает 40 символов, функция возвращает ее в исходном виде.
+//Если длина больше 40 символов, то функция обрезает строку до 40 - ка символов и добавляет
+//в конец строки троеточие '...', после чего возвращает укороченную версию.
+const formatString = function (string) {
+  if (string.length > 40) {
+    string = string.slice(0, 40) + '...';
+    return string;
+  } else return string;
+};
+
+/*
+ * Вызовы функции для проверки работоспособности твоей реализации.
+ */
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+// вернется оригинальная строка
+
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+// вернется форматированная строка
+
+console.log(formatString('Curabitur ligula sapien.'));
+// вернется оригинальная строка
+
+console.log(
+  formatString(
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+  ),
+);
+// вернется форматированная строка

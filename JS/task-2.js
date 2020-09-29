@@ -1,10 +1,27 @@
-let ordered;
-const total = 100;
-ordered = 101;
-if (total >= ordered) {
-  ordered = 'Заказ оформлен, с вами свяжется менеджер';
-} else {
-  ordered = 'На складе недостаточно товаров!';
-}
+const calculateEngravingPrice = function (message, pricePerWord) {
+  return message.split(' ').length * pricePerWord;
+};
+console.log(
+  'Full cost: ',
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    10,
+  ),
+);
+console.log(
+  'Full cost: ',
+  calculateEngravingPrice(
+    'Proin sociis natoque et magnis parturient montes mus',
+    20,
+  ),
+);
 
-console.log(ordered);
+console.log(
+  'Full cost: ',
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40),
+);
+
+console.log(
+  'Full cost: ',
+  calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20),
+);
