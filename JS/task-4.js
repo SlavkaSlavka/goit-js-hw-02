@@ -5,13 +5,14 @@
 //в конец строки троеточие '...', после чего возвращает укороченную версию.
 const formatString = function (string) {
   if (string.length > 40) {
-    string = string.slice(0, 40) + '...';
+    string = string.slice(0, 37) + '...';
+    }  
     return string;
-  } else return string;
 };
 
+
 /*
- * Вызовы функции для проверки работоспособности твоей реализации.
+ * Вызовы функции для  #8230 проверки работоспособности твоей реализации.
  */
 console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // вернется оригинальная строка
