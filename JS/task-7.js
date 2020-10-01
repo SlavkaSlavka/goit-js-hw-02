@@ -30,26 +30,30 @@
 //использует результаты вызовов других функций - isLoginUnique и isLoginValid.
 const logins = ['Mango', 'robotGoogles', 'Poly', 'Aj4x1sBozz', 'qwerty123'];
 
-let isLoginValid = function(login) {
+
+const isLoginValid = function(login) {
+
     if (login.length<4 || login.length>16) {
-        isLoginValid = 'false';
-    } else isLoginValid = 'true';
-    return isLoginValid;
+        return false;
+    } else return true;    
+}; 
+
+const isLoginUnique = function(allLogins, login) {
+    isLoginUnique = allLogins.includes(login);
+   return isLoginUnique;
 };
 
 
-    const addLogin = function(allLogins, login) {
-        if(isLoginValid==='false') {
-            allLogins='dddd' } else {
-    allLogins = allLogins.push(login);
-}
-    return allLogins;
-     };
 
-/*
- * Вызовы функции для проверки работоспособности твоей реализации.
- */
-console.log(addLogin(logins, 'Ajax')); // 'Логин успешно добавлен!'
-//console.log(addLogin(logins, 'robotGoogles')); // 'Такой логин уже используется!'
-//console.log(addLogin(logins, 'Zod')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
-console.log(addLogin(logins, 'jqueryisextremelyfast'))
+const addLogin = function(allLogins, login) { 
+    allLogins = allLogins.concat(login);
+    return allLogins;
+  };
+  
+  /*
+   * Вызовы функции для проверки работоспособности твоей реализации.
+   */
+  console.log(addLogin(logins, 'Ajax')); // 'Логин успешно добавлен!'
+  console.log(addLogin(logins, 'robotGoogles')); // 'Такой логин уже используется!'
+  console.log(addLogin(logins, 'Zod')); // 'Ошибка! Логин должен быть от 4 до 16 символов'
+  console.log(addLogin(logins, 'jqueryisextremelyfast')); // 'Ошибка! Логин должен быть от 4 до 16 символов'

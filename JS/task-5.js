@@ -2,13 +2,13 @@
 // Функция проверяет ее на содержание слов spam и sale. 
 //Если нашли зарещенное слово то функция возвращает true, если запрещенных слов нет функция возвращает false. 
 //Слова в строке могут быть в произвольном регистре.
+let spam = false;
 
 const checkForSpam = function(message) {
   let normalizeMesasge = message.toLowerCase();
-  if (normalizeMesasge.includes('spam') || normalizeMesasge.includes('sale'))  {
-    normalizeMesasge = 'true';
-  } else normalizeMesasge = 'false'
-  return normalizeMesasge;
+  if (normalizeMesasge.includes('spam') || normalizeMesasge.includes('sale')) {
+  spam = true;} 
+  return spam;
 };
 
 /*
