@@ -39,13 +39,13 @@ const isLoginValid = function(login) {
 }; 
 
 const isLoginUnique = function(allLogins, login) {
-    isLoginUnique = allLogins.includes(login);
-   return isLoginUnique;
+    return allLogins.includes(login);
 };
 
 
 
-const addLogin = function(allLogins, login) { 
+const addLogin = function(allLogins, login) {
+    console.log(isLoginUnique);
     allLogins = allLogins.concat(login);
     return allLogins;
   };
