@@ -9,21 +9,39 @@
 let input;
 const numbers = [];
 let total = 0;
-do {
-  input = prompt('введите число');
-  if (isNaN(input) || input === '')  {
-   alert('Было введено не число, попробуйте ещё раз')
+while (input !== null) {
+  input = prompt('Число?');
+  let inputNumber = Number(input);
+  if (isNaN(inputNumber) || input === '') {
+    alert('надо число!');
   } else {
-    numbers.push(input); 
-  }
-} while (input !== null);
+  numbers.push(inputNumber);}
+}
 numbers.pop('');
-if (numbers !== []) {
+
+if (numbers.length >= 1) {
   for (const number of numbers) {
-total += Number(number);
-  }
-  console.log(`Общая сумма чисел равна ${total}`);
-  }
+    total += Number(number);
+    }
+    console.log(`Общая сумма чисел равна ${total}`);
+}
+
+
+// do {
+//   input = prompt('введите число');
+//   if (isNaN(input) || input === '')  {
+//    alert('Было введено не число, попробуйте ещё раз')
+//   } else {
+//     numbers.push(input); 
+//   }
+// } while (input !== null);
+// numbers.pop('');
+// if (numbers !== []) {
+//   for (const number of numbers) {
+// total += Number(number);
+//   }
+//   console.log(`Общая сумма чисел равна ${total}`);
+//   }
  
 
 
