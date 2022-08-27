@@ -14,9 +14,15 @@
 
 let input = 0;
 let numbers = [];
-console.log(input);
-console.log(numbers);
+let total = 0;
 
-// while (input !== null) {
-    // numbers.push(input);
-// }
+while (input !== null) {
+    input = prompt('введите число');
+    isNaN(input) ? alert('Ввели не число, попробуйте ещё раз') : numbers.push(input);
+}
+if (numbers.length > 0) {
+    for (const number of numbers ) {
+        total += Number(number);
+    }
+}
+console.log(`Общая сумма чисел равна ${total}`)
